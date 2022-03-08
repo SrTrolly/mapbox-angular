@@ -4,6 +4,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+import Mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
+
+Mapboxgl.accessToken = 'pk.eyJ1Ijoic3J0cm9sbHkiLCJhIjoiY2wwOG9uMTZvMDVqMzNlbW0yanllMmNyOSJ9.TLwyDdU_oWJnMxk8qQoJaw'
+
+if (!navigator.geolocation) {
+  alert("Navegador no soporta la Geolocation")
+  throw new Error("Navegador no soporta la Geolocation")
+}
+
 if (environment.production) {
   enableProdMode();
 }
